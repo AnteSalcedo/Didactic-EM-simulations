@@ -1,4 +1,10 @@
 
+% Ante Salcedo
+% April 2017
+
+% To teach students how to plot electric field 
+% for one and two point charges
+
 clear;
 
 % Espacio de la simulación
@@ -28,7 +34,7 @@ pol1 = +1;
 
 x2 = -0.5;
 y2 = 0.0;
-pol2 = -1;
+pol2 = +1;
 
 
 %Cálculo del campo magnético
