@@ -22,12 +22,12 @@ y = Yi:Lx/(Ny-1):Yf;            %y axis
 
 % Ubicación de monopolos
 
-x1 = 0.2;
+x1 = 0.5;
 y1 = 0.0;
 pol1 = +1;
 
-x2 = -0.2;
-y2 = 0.2;
+x2 = -0.5;
+y2 = 0.0;
 pol2 = -1;
 
 
@@ -38,11 +38,11 @@ for i=1:Nx
         d1 = sqrt((x(i)-x1)^2+(y(j)-y1)^2);
         d2 = sqrt((x(i)-x2)^2+(y(j)-y2)^2);
         
-        Ex1 = pol1*1/d1*(x(i)-x1);
-        Ey1 = pol1*1/d1*(y(j)-y1);
+        Ex1 = pol1*1/d1^3*(x(i)-x1);
+        Ey1 = pol1*1/d1^3*(y(j)-y1);
         
-        Ex2 = pol2*1/d2*(x(i)-x2);
-        Ey2 = pol2*1/d2*(y(j)-y2);
+        Ex2 = pol2*1/d2^3*(x(i)-x2);
+        Ey2 = pol2*1/d2^3*(y(j)-y2);
         
         Ex(i,j) = Ex1 + Ex2;
         Ey(i,j) = Ey1 + Ey2;
@@ -53,15 +53,15 @@ end
 
 %mesh(X,Y,R)
 %contour(X,Y,R,100)
-quiver(X,Y,Ey,Ex)
+quiver(Y,X,Ex,Ey)
 
-%startx = x-x;
-%starty = y;
-%streamline(X,Y,Ey,Ex,startx,starty)
+%startx = [x1 x2];
+%starty = [y1 y2];
+%streamline(Y,X,Ex,Ey)
 
 hold on
-plot(y1,x1,'*r')
-plot(y2,x2,'*m')
+plot(x1,y1,'*r')
+plot(x2,y2,'*m')
 hold off
 
 axis([-1 1 -1 1])
