@@ -7,7 +7,7 @@
 
 clear;
 
-% Espacio de la simulación
+% Espacio de la simulaciÃ³n
 
 Lx = 2;                         %Longitud en X
 Ly = 2;                         %Longitud en y
@@ -26,7 +26,7 @@ y = Yi:Lx/(Ny-1):Yf;            %y axis
 [X,Y]=meshgrid(x,y);            %Simulation space
 
 
-% Ubicación de monopolos
+% UbicaciÃ³n de monopolos
 
 x1 = 0.5;
 y1 = 0.0;
@@ -37,7 +37,7 @@ y2 = 0.0;
 pol2 = +1;
 
 
-%Cálculo del campo magnético
+%CÃ¡lculo del campo magnÃ©tico
 for i=1:Nx        
     for j=1:Ny
       
